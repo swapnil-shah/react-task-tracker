@@ -4,19 +4,19 @@
       "id": 1,
       "name": "Doctors Appointment",
       "day": "Feb 6th at 1: 00 pm",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 2,
       "name": "Meeting at office",
       "day": "Feb 10th at 10: 00 am",
-      "reminder": true
+      "reminder": false
     },
     {
-      "id": 3,
-      "name": "Call carpenter",
-      "day": "Feb 18th at 6: 30 pm",
-      "reminder": false
+      "name": "Take Test",
+      "day": "Friday Feb 19th 12 PM",
+      "reminder": true,
+      "id": 3
     }
   ]
 }
