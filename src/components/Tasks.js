@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
 import Task from './Task'
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, onDelete }) => {
   return (
     <div>
-      {tasks.map((task, index) => <Task key={index} task={task} />)}
+      {tasks.map((task, index) => <Task key={index} task={task} onDelete={onDelete} />)}
     </div>
   )
 }
 
 Tasks.propTypes = {
-  tasks: PropTypes.object.isRequired
+  tasks: PropTypes.array.isRequired
 }
 export default Tasks
