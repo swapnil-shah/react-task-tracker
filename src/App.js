@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 
 function App() {
+  const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([{
     id: 1,
     name: "Doctors Appointment",
@@ -37,13 +38,18 @@ function App() {
 
   const handleAddTask = (task) => {
     console.log(task)
-    setTasks([...tasks, task])
+    const id = new Date().valueOf();
+    const newTask = { id, ...task }
+    setTasks([...tasks, newTask])
   }
 
+  const handleAddTaskToggle = () => {
+    setShowAddTask(!showAddTask)
+  }
   return (
     <div className="container">
-      <Header title="Task Tracker" />
-      <AddTask addTask={handleAddTask} />
+      <Header title="Task Tracker" addTaskToggle={handleAddTaskToggle} showAddTask={showAddTask} />
+      {showAddTask && <AddTask addTask={handleAddTask} />}
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={handleDelete} onToggle={handleToggle} /> : "No task to show"}
     </div>
   );
